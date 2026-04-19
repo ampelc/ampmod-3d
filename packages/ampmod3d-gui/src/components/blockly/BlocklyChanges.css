@@ -1,0 +1,34 @@
+/* Reset the context menu container */
+.blocklyWidgetDiv .blocklyContextMenu {
+  background-color: white !important;
+  box-shadow: none !important;
+  padding: 4px 0 !important;
+  border: 1px solid #5552 !important;
+  border-radius: 2px !important; /* Classic sharp corners */
+  min-width: 200px;
+}
+
+/* Restyle individual menu items */
+.blocklyWidgetDiv .blocklyMenuItem {
+  color: #333 !important;
+  font-family: sans-serif !important;
+  font-size: 12px !important;
+}
+
+/* Classic hover effect (blue highlight) */
+.blocklyWidgetDiv .blocklyMenuItemHighlight {
+  background-color: #59c059 !important;
+  color: white !important;
+}
+
+/* Remove the space between the classes */
+.blocklyWidgetDiv .blocklyMenuItem.blocklyMenuItemDisabled {
+  color: #ccc !important; /* Lighter grey for that classic look */
+  cursor: default !important;
+}
+
+/* Ensure the hover effect doesn't trigger on disabled items */
+.blocklyWidgetDiv .blocklyMenuItem.blocklyMenuItemDisabled.blocklyMenuItemHighlight {
+  background-color: transparent !important;
+  color: #ccc !important;
+}

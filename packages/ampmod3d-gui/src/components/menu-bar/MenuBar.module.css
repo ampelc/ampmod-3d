@@ -1,0 +1,75 @@
+/* MenuBar.module.css */
+.menubarRoot {
+  display: flex;
+  background-color: white;
+  padding: 0 10px;
+  height: 40px;
+  align-items: center;
+  user-select: none;
+  gap: 4px;
+  position: relative; 
+  z-index: 50; /* Keeps the main bar above standard page content */
+}
+
+.logoArea {
+  margin-right: 15px;
+  color: #59c059;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.menubarTrigger {
+  padding: 6px 12px;
+  outline: none;
+  user-select: none;
+  font-weight: bold;
+  line-height: 1;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 0;
+  background: transparent;
+}
+
+/* Radix uses [data-state="open"] to show which menu is active */
+.menubarTrigger[data-state="open"],
+.menubarTrigger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menubarContent {
+  min-width: 160px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  animation-duration: 400ms;
+  will-change: transform, opacity;
+  z-index: 100;
+}
+
+.menubarItem {
+  font-size: 13px;
+  line-height: 1;
+  color: #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 10px;
+  position: relative;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.menubarItem[data-highlighted] {
+  background-color: #59c059;
+  color: white;
+} 
