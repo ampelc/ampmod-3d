@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import earthTextureImg from './Earthmap1000x500.jpg';
+import earthTextureImg from './Earthmap1000x500.jpg'; // https://commons.wikimedia.org/wiki/File:Earthmap1000x500.jpg
 
 const LoadingScreen = () => {
   const mountRef = useRef<HTMLDivElement>(null);

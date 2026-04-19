@@ -5,7 +5,7 @@ import './BlocklyChanges.css';
 import * as En from 'blockly/msg/en';
 Blockly.setLocale(En);
 import '../../lib/themes/skribu';
-
+import '../../lib/themes/skribu-dark';
 
 // 1. Import the renderer registration file
 import {ScratchRenderer} from '../../lib/renderer/renderer'; 
@@ -50,7 +50,7 @@ const BlocklyEditor = ({ onReady }: BlocklyEditorProps) => {
 
     primaryWorkspace.current = Blockly.inject(blocklyDiv.current, {
       toolbox: TOOLBOX_CONFIG,
-      theme: 'skribu',
+      theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'skribuDark' : 'skribu',
       // 2. Use the registered name here
       renderer: 'scratch_classic', 
       grid: { spacing: 20, length: 3, colour: '#ccc', snap: true },
@@ -70,6 +70,14 @@ const BlocklyEditor = ({ onReady }: BlocklyEditorProps) => {
 
     onReady();
 
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const handleThemeChange = (e: MediaQueryListEvent | MediaQueryList) => {
+    const newTheme = e.matches ? 'skribuDark' : 'skribu';
+    primaryWorkspace.current?.setTheme(Blockly.registry.getClass(Blockly.registry.Type.THEME, newTheme));
+  };
+
+  // Start listening
+  darkModeMediaQuery.addEventListener('change', handleThemeChange);
     const handleResize = () => {
       if (primaryWorkspace.current) Blockly.svgResize(primaryWorkspace.current);
     };

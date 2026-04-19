@@ -11,6 +11,9 @@ importers:
       '@blockly/continuous-toolbox':
         specifier: ^7.0.9
         version: 7.0.9(blockly@12.5.1)
+      '@blockly/theme-dark':
+        specifier: ^8.0.4
+        version: 8.0.4(blockly@12.5.1)
       '@radix-ui/react-menubar':
         specifier: ^1.1.16
         version: 1.1.16(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -41,6 +44,12 @@ packages:
 
   '@blockly/continuous-toolbox@7.0.9':
     resolution: {integrity: sha512-luFNC9GX4GAEqTrag07jV3DrY2WEeYfyBJnP932/xb27hs6oVaAw1bJPzI/NtyBxdU3LOkQZ826fEVbCVoXzAQ==}
+    engines: {node: '>=8.17.0'}
+    peerDependencies:
+      blockly: ^12.0.0
+
+  '@blockly/theme-dark@8.0.4':
+    resolution: {integrity: sha512-dfuCBqFbJ8PzNuv3NxUXG9WqWYk16mtpnV3G2sOjr1O4pJdyo0co+LsircKmOSmtcwj9m7G5IHV3mRQka+f8zA==}
     engines: {node: '>=8.17.0'}
     peerDependencies:
       blockly: ^12.0.0
@@ -1061,6 +1070,10 @@ snapshots:
       lru-cache: 10.4.3
 
   '@blockly/continuous-toolbox@7.0.9(blockly@12.5.1)':
+    dependencies:
+      blockly: 12.5.1
+
+  '@blockly/theme-dark@8.0.4(blockly@12.5.1)':
     dependencies:
       blockly: 12.5.1
 

@@ -12,6 +12,7 @@
   "packageManager": "pnpm@10.33.0",
   "dependencies": {
     "@blockly/continuous-toolbox": "^7.0.9",
+    "@blockly/theme-dark": "^8.0.4",
     "@radix-ui/react-menubar": "^1.1.16",
     "blockly": "^12.5.1",
     "modern-normalize": "^3.0.1",

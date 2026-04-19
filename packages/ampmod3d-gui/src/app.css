@@ -1,3 +1,32 @@
 body {
     font-family: "Geist Variable", sans-serif;
 }
+
+:root {
+  /* Light Mode Defaults (Active by default) */
+  --menu-bg: #ffffff;
+  --menu-text: #333333;
+  --menu-trigger-hover: rgba(0, 0, 0, 0.1);
+  --menu-border: rgba(0, 0, 0, 0.1);
+  --accent-color: #59c059;
+  --accent-text: #ffffff;
+}
+
+/*
+  :global(.dark) {
+    --menu-bg: #1e1e1e;
+    --menu-text: #e0e0e0;
+    --menu-trigger-hover: rgba(255, 255, 255, 0.1);
+    --menu-border: rgba(255, 255, 255, 0.1);
+  } 
+*/
+
+/* Detects if the user has Dark Mode enabled in their OS settings */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --menu-bg: #1e1e1e;
+    --menu-text: #e0e0e0;
+    --menu-trigger-hover: rgba(255, 255, 255, 0.1);
+    --menu-border: rgba(255, 255, 255, 0.1);
+  }
+}

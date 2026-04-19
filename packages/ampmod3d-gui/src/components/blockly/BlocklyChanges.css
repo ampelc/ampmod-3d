@@ -4,8 +4,21 @@
   box-shadow: none !important;
   padding: 4px 0 !important;
   border: 1px solid #5552 !important;
-  border-radius: 2px !important; /* Classic sharp corners */
+  border-radius: 2px !important; 
   min-width: 200px;
+  
+  /* Animation properties */
+  animation: menuFadeIn 0.1s ease-out;
+}
+
+/* Keyframes for the fade effect */
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Restyle individual menu items */
@@ -13,21 +26,23 @@
   color: #333 !important;
   font-family: sans-serif !important;
   font-size: 12px !important;
+  transition: color 0.15s, background-color 0.15s !important;
+  font-family: "Geist Variable", sans-serif !important;
 }
 
-/* Classic hover effect (blue highlight) */
+/* Classic hover effect (green highlight) */
 .blocklyWidgetDiv .blocklyMenuItemHighlight {
-  background-color: #59c059 !important;
+  background-color: #4fa55c !important;
   color: white !important;
 }
 
-/* Remove the space between the classes */
+/* Disabled items styling */
 .blocklyWidgetDiv .blocklyMenuItem.blocklyMenuItemDisabled {
-  color: #ccc !important; /* Lighter grey for that classic look */
+  color: #ccc !important;
   cursor: default !important;
 }
 
-/* Ensure the hover effect doesn't trigger on disabled items */
+/* Prevent hover on disabled items */
 .blocklyWidgetDiv .blocklyMenuItem.blocklyMenuItemDisabled.blocklyMenuItemHighlight {
   background-color: transparent !important;
   color: #ccc !important;
