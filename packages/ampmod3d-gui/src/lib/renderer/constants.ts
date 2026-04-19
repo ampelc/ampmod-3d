@@ -26,11 +26,17 @@ export class ConstantProvider extends Blockly.zelos.ConstantProvider {
         const varKey = `--colour-${key}`
         root.style.setProperty(varKey, colour)
       } else {
+        // Fallback chain: colourQuaternary → colourTertiary → colourSecondary → colourPrimary → safe default
+        // Prevents "Invalid colour: undefined" when a Zelos base style omits colourTertiary.
+        const baseColor =
+          'colourQuaternary' in colour
+            ? String(colour.colourQuaternary)
+            : (colour.colourTertiary ?? colour.colourSecondary ?? colour.colourPrimary ?? '#000000')
         const style = {
-          colourPrimary: 'colourQuaternary' in colour ? String(colour.colourQuaternary) : colour.colourTertiary,
-          colourSecondary: 'colourQuaternary' in colour ? String(colour.colourQuaternary) : colour.colourTertiary,
-          colourTertiary: 'colourQuaternary' in colour ? String(colour.colourQuaternary) : colour.colourTertiary,
-          colourQuaternary: 'colourQuaternary' in colour ? String(colour.colourQuaternary) : colour.colourTertiary,
+          colourPrimary: baseColor,
+          colourSecondary: baseColor,
+          colourTertiary: baseColor,
+          colourQuaternary: baseColor,
           hat: '',
         }
         theme.setBlockStyle(`${key}_selected`, style)

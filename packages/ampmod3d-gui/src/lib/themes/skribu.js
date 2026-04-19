@@ -5,6 +5,7 @@ export default Blockly.Theme.defineTheme(
   'skribu',
   {
     base: Blockly.Themes.Zelos,
+    startHats: true,
     fontStyle: {
       'family': '"Geist Variable", "Helvetica Neue", Helvetica, Arial, sans-serif',
       'weight': '550',

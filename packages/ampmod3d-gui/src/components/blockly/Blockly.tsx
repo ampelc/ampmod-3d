@@ -4,6 +4,8 @@ import { registerContinuousToolbox, ContinuousFlyout } from '@blockly/continuous
 import './BlocklyChanges.css';
 import * as En from 'blockly/msg/en';
 Blockly.setLocale(En);
+import '../../lib/themes/skribu';
+
 
 // 1. Import the renderer registration file
 import {ScratchRenderer} from '../../lib/renderer/renderer'; 
